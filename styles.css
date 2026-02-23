@@ -1,0 +1,242 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #2c3e50;
+    color: white;
+    min-height: 100vh;
+}
+
+.screen {
+    display: none;
+    padding: 20px;
+}
+
+.screen.active {
+    display: block;
+}
+
+#setup-screen {
+    max-width: 400px;
+    margin: 100px auto;
+    text-align: center;
+    background: #34495e;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+h1 {
+    margin-bottom: 30px;
+    color: #ecf0f1;
+}
+
+.game-options {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+button {
+    padding: 12px 24px;
+    font-size: 16px;
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #2980b9;
+}
+
+.join-section {
+    display: flex;
+    gap: 10px;
+}
+
+input, select {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #bdc3c7;
+    border-radius: 5px;
+    flex: 1;
+}
+
+.team-select {
+    margin-top: 10px;
+}
+
+#game-screen {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.game-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    background: #34495e;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.team-indicator {
+    padding: 8px 16px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.team-indicator.red { background: #e74c3c; }
+.team-indicator.blue { background: #3498db; }
+
+.game-container {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 20px;
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    background: #34495e;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.card {
+    aspect-ratio: 1;
+    background: #ecf0f1;
+    color: #2c3e50;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px;
+    transition: transform 0.2s;
+    word-break: break-word;
+}
+
+.card:hover:not(.revealed) {
+    transform: scale(1.05);
+}
+
+.card.revealed {
+    cursor: default;
+}
+
+.card.red-agent { background: #e74c3c; color: white; }
+.card.blue-agent { background: #3498db; color: white; }
+.card.assassin { background: #2c3e50; color: white; }
+.card.innocent { background: #95a5a6; color: white; }
+
+.game-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.team-scores {
+    display: flex;
+    justify-content: space-around;
+    padding: 15px;
+    background: #34495e;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.clue-section {
+    background: #34495e;
+    padding: 15px;
+    border-radius: 5px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.clue-section input {
+    flex: 1;
+    min-width: 100px;
+}
+
+.clue-section button {
+    flex-shrink: 0;
+}
+
+.chat-section {
+    background: #34495e;
+    border-radius: 5px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+.chat-input {
+    display: flex;
+    padding: 10px;
+    gap: 5px;
+}
+
+.chat-message {
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.chat-message.system { color: #f1c40f; }
+.chat-message.red { color: #e74c3c; }
+.chat-message.blue { color: #3498db; }
+
+.players-list {
+    background: #34495e;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+#red-players, #blue-players {
+    min-height: 50px;
+    margin: 5px 0;
+}
+
+.player-badge {
+    display: inline-block;
+    padding: 3px 8px;
+    margin: 2px;
+    border-radius: 3px;
+    font-size: 12px;
+}
+
+.player-badge.spymaster { font-weight: bold; border: 2px solid gold; }
+
+#connection-status {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+    .game-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .game-board {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
