@@ -63,12 +63,13 @@ class PeerConnectionManager {
         // Simple signaling using Firebase Realtime Database (free tier)
         // This is the only server-dependent part, but Firebase free tier handles 200+ concurrent users easily
         const firebaseConfig = {
-            apiKey: "YOUR_FIREBASE_API_KEY",
-            authDomain: "YOUR_PROJECT.firebaseapp.com",
-            databaseURL: "https://YOUR_PROJECT.firebaseio.com",
-            projectId: "YOUR_PROJECT",
-            storageBucket: "YOUR_PROJECT.appspot.com",
-            messagingSenderId: "YOUR_SENDER_ID"
+          apiKey: "AIzaSyAiuRDew6h1e2b3bqphrRIFksMkYu32h5M",
+          authDomain: "codenames-f1b66.firebaseapp.com",
+          projectId: "codenames-f1b66",
+          storageBucket: "codenames-f1b66.firebasestorage.app",
+          messagingSenderId: "618871090654",
+          appId: "1:618871090654:web:7609cf959499236d8fc14f",
+          measurementId: "G-SKTPHD9VGZ"
         };
 
         // Initialize Firebase (you'll need to create a free Firebase project)
